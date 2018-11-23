@@ -1,13 +1,29 @@
 <mat-toolbar color="primary">
-  <mat-toolbar-row>
-    <h1>
-      Welcome to {{ title }}!
-    </h1>
+  <mat-toolbar-row [class.add-top]='bClickInputAdd'>
+    <mat-form-field>
+
+      <button matPrefix mat-button *ngIf="sNewTask" matSuffix mat-icon-button aria-label="Clear" (click)="sNewTask=''">
+        <mat-icon>close</mat-icon>
+      </button>
+
+      <input matInput type="text" placeholder="Add new task" [(ngModel)]="sNewTask" (click)="bClickInputAdd=true">
+
+      <button matSuffix mat-button (click)='addNewTask()'>save</button>
+
+    </mat-form-field>
   </mat-toolbar-row>
 </mat-toolbar>
 
+<mat-list>
+  <ng-container *ngFor="let sTask of asTasks; let i = index">
+      <mat-list-item>
+          {{i+1}}
+          {{sTask }}
+          <mat-icon>flight_takeoff</mat-icon>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+  </ng-container>
+</mat-list>
 
-<button mat-raised-button color="accent">button check</button>
-<mat-icon>flight_takeoff</mat-icon>
 
 <router-outlet></router-outlet>
