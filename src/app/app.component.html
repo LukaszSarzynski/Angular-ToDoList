@@ -16,12 +16,13 @@
 
 <mat-list>
   <ng-container *ngFor="let sTask of asTasks; let i = index">
-      <mat-list-item>
-          {{i+1}}
-          {{sTask }}
-          <mat-icon>flight_takeoff</mat-icon>
-        </mat-list-item>
-        <mat-divider></mat-divider>
+    <mat-list-item>
+      <mat-icon matTooltip="Remove task" matTooltipClass="tooltip-red" (click)="removeTask(sTask)">delete</mat-icon>
+      {{i+1}}
+      {{sTask }}
+
+    </mat-list-item>
+    <mat-divider></mat-divider>
   </ng-container>
 </mat-list>
 
