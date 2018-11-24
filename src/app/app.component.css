@@ -5,3 +5,15 @@
 .tooltip-red {
   background: #b71c1c;
 }
+
+.box {
+  margin: auto;
+  width: 45%;
+  align-self: flex-start;
+}
+
+.list-boxs {
+  display: flex; justify-content: space-evenly;
+  flex-flow: row wrap;
+  align-items: flex-start; align-content: flex-start;
+}

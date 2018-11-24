@@ -14,17 +14,35 @@
   </mat-toolbar-row>
 </mat-toolbar>
 
-<mat-list>
-  <ng-container *ngFor="let sTask of asTasks; let i = index">
-    <mat-list-item>
-      <mat-icon matTooltip="Remove task" matTooltipClass="tooltip-red" (click)="removeTask(sTask)">delete</mat-icon>
-      {{i+1}}
-      {{sTask }}
+<div class="list-boxs">
+  <div class="box">
+    <h2>ToDo</h2>
+    <mat-list>
+      <ng-container *ngFor="let sTask of asTasks; let i = index">
+        <mat-list-item>
+          <mat-icon matTooltip="Remove task" matTooltipClass="tooltip-red" (click)="removeTask(sTask)">delete</mat-icon>
+          {{i+1}}
+          {{sTask }}
+          &nbsp;&nbsp;<button mat-stroked-button (click)="doneTask(sTask)">done</button>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+      </ng-container>
+    </mat-list>
+  </div>
+  <div class="box">
+    <h2>Done</h2>
+    <mat-list>
+      <ng-container *ngFor="let sTask of asTaskSuccessful; let i = index">
+        <mat-list-item>
+          {{i+1}}
+          {{sTask }}
 
-    </mat-list-item>
-    <mat-divider></mat-divider>
-  </ng-container>
-</mat-list>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+      </ng-container>
+    </mat-list>
+  </div>
+</div>
 
 
 <router-outlet></router-outlet>
