@@ -6,16 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  bClickInputAdd: boolean;
-  sNewTask: string;
+
   asTasks: Array<string> = [];
   asTaskSuccessful: Array<string> = [];
 
-  addNewTask() {
-    if (this.sNewTask.length > 0) {
-      this.asTasks.push(this.sNewTask);
+  getNewTask(sNewTask: string) {
+    if (sNewTask.length > 0) {
+      this.asTasks.push(sNewTask);
     }
-    this.sNewTask = '';
   }
 
   removeTask(sTaskToRemove: string) {

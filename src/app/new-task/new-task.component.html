@@ -1,0 +1,11 @@
+<mat-form-field>
+
+  <button matPrefix mat-button *ngIf="sNewTask" matSuffix mat-icon-button aria-label="Clear" (click)="sNewTask=''">
+    <mat-icon>close</mat-icon>
+  </button>
+
+  <input matInput type="text" placeholder="Add new task" [(ngModel)]="sNewTask" (click)="bClickInputAdd=true">
+
+  <button matSuffix mat-button (click)='sendNewTask()'>save</button>
+
+</mat-form-field>

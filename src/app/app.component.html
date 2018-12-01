@@ -1,46 +1,15 @@
 <mat-toolbar color="primary">
-  <mat-toolbar-row [class.add-top]='bClickInputAdd'>
-    <mat-form-field>
-
-      <button matPrefix mat-button *ngIf="sNewTask" matSuffix mat-icon-button aria-label="Clear" (click)="sNewTask=''">
-        <mat-icon>close</mat-icon>
-      </button>
-
-      <input matInput type="text" placeholder="Add new task" [(ngModel)]="sNewTask" (click)="bClickInputAdd=true">
-
-      <button matSuffix mat-button (click)='addNewTask()'>save</button>
-
-    </mat-form-field>
+  <mat-toolbar-row class="add-top">
+    <app-new-task (emitNewTask)="getNewTask($event)"></app-new-task>
   </mat-toolbar-row>
 </mat-toolbar>
 
 <div class="list-boxs">
   <div class="box">
-    <h2>ToDo</h2>
-    <mat-list>
-      <ng-container *ngFor="let sTask of asTasks; let i = index">
-        <mat-list-item>
-          <mat-icon matTooltip="Remove task" matTooltipClass="tooltip-red" (click)="removeTask(sTask)">delete</mat-icon>
-          {{i+1}}
-          {{sTask }}
-          &nbsp;&nbsp;<button mat-stroked-button (click)="doneTask(sTask)">done</button>
-        </mat-list-item>
-        <mat-divider></mat-divider>
-      </ng-container>
-    </mat-list>
+    <app-todo-tasks [asTasks]="asTasks" (emitTaskToRemove)="removeTask($event)" (emitTaskToDone)="doneTask($event)"></app-todo-tasks>
   </div>
   <div class="box">
-    <h2>Done</h2>
-    <mat-list>
-      <ng-container *ngFor="let sTask of asTaskSuccessful; let i = index">
-        <mat-list-item>
-          {{i+1}}
-          {{sTask }}
-
-        </mat-list-item>
-        <mat-divider></mat-divider>
-      </ng-container>
-    </mat-list>
+    <app-done-tasks [asTaskSuccessful]="asTaskSuccessful" ></app-done-tasks>
   </div>
 </div>
 
