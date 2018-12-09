@@ -1,15 +1,15 @@
 <mat-toolbar color="primary">
   <mat-toolbar-row class="add-top">
-    <app-new-task (emitNewTask)="getNewTask($event)"></app-new-task>
+    <app-new-task></app-new-task>
   </mat-toolbar-row>
 </mat-toolbar>
 
 <div class="list-boxs">
   <div class="box">
-    <app-todo-tasks [asTasks]="asTasks" (emitTaskToRemove)="removeTask($event)" (emitTaskToDone)="doneTask($event)"></app-todo-tasks>
+    <app-todo-tasks></app-todo-tasks>
   </div>
   <div class="box">
-    <app-done-tasks [asTaskSuccessful]="asTaskSuccessful" ></app-done-tasks>
+    <app-done-tasks></app-done-tasks>
   </div>
 </div>
 
