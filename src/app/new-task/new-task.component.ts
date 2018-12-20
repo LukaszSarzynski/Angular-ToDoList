@@ -10,10 +10,10 @@ export class NewTaskComponent implements OnInit {
 
   sNewTask: string;
 
-  constructor(private sTasksService: TasksService) { }
+  constructor(private svTasksService: TasksService) { }
 
   sendNewTask() {
-    this.sTasksService.addNewTask(this.sNewTask);
+    this.svTasksService.addNewTask(this.sNewTask);
     this.sNewTask = '';
   }
 
