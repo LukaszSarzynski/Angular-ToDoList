@@ -1,7 +1,7 @@
 # Angular-ToDoList
-This is my Angular 7 sandbox
+This is my Angular 8 sandbox
 
-example from 2018-11-27 on [github.io Site](https://lukaszsarzynski.github.io/Angular-ToDoList/)
+example from 2018-11-27 (Angular7) on [github.io Site](https://lukaszsarzynski.github.io/Angular-ToDoList/)
 
 **To check this repository on your computer please:**
  
