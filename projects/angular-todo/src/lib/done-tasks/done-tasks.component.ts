@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { TasksService } from '../tasks.service';
 
 @Component({
-  selector: 'app-done-tasks',
+  selector: 'lf-done-tasks',
   templateUrl: './done-tasks.component.html',
   styleUrls: ['./done-tasks.component.css']
 })

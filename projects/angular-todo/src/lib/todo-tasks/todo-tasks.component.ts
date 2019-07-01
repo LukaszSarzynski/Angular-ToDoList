@@ -3,7 +3,7 @@ import { TasksService } from '../tasks.service';
 
 
 @Component({
-  selector: 'app-todo-tasks',
+  selector: 'lf-todo-tasks',
   templateUrl: './todo-tasks.component.html',
   styleUrls: ['./todo-tasks.component.css']
 })
